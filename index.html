@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinspire</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PENTING -->
+  <script type="module" src="js/app.js"></script>
+</head>
+
+<body>
+
+<div id="app" class="flex h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 border-r p-4">
+    <h1 class="text-2xl font-bold mb-6">Pinspire</h1>
+
+    <button id="btn-home" class="nav-btn">Beranda</button>
+    <button id="btn-saved" class="nav-btn">Tersimpan</button>
+    <button id="btn-create" class="nav-btn">Buat Pin</button>
+    <button id="btn-profile" class="nav-btn">Profil</button>
+  </aside>
+
+  <main class="flex-1 flex flex-col bg-gray-50">
+
+  <!-- TOPBAR -->
+  <div class="flex items-center justify-between p-4 bg-white shadow-sm">
+    <input id="search" class="w-1/2 p-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Cari foto atau video...">
+    
+    <div class="flex items-center gap-4">
+      <button id="btn-profile" class="profile-btn">Profil</button>
+      <div id="avatar-circle" class="avatar-circle">F</div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="p-6 overflow-y-auto flex-1">
+    <div id="pin-grid" class="masonry-grid"></div>
+  </div>
+
+</main>
+</div>
+
+<!-- MODAL UPLOAD -->
+<div id="upload-modal" class="modal hidden">
+  <div class="modal-box">
+    <h2 class="font-bold mb-3">Upload Pin</h2>
+
+    <input id="pin-title" class="input" placeholder="Judul pin">
+    <input id="pin-file" type="file" accept="image/*,video/*">
+
+    <button id="upload-btn" class="btn-primary">Upload</button>
+    <button id="close-modal">Batal</button>
+  </div>
+</div>
+
+</body>
+</html>
